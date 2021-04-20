@@ -1,0 +1,28 @@
+<div class = "show__items">
+    <div class = "images__items__show">
+    </div>
+    <div class = "show__images__cart cart">
+         <span class ="items__show"><%= image_tag(@article.avatar_url) if @article.avatar? %></span>
+    </div>
+    <div class = "show__title__cart cart">
+         <span class ="items__show title__cart"><%= @article.title%></span>
+    </div>
+ 
+    <div class = "show__author__cart cart">
+       Автор Статьи: <span class ="items__show author__cart"><%= @article.author%> </span> 
+    </div>
+    <div class = "show__description__cart cart">
+        <span class ="items__show description__cart"> Описание: </span> <%= @article.description%>
+    </div>
+    
+    <div class = "show__button__cart">
+        <span class = "line"></span>
+        <div class = "link__cart">
+            <%= link_to "Редактировать:  " + "#{@article.title}" , edit_article_path(@article.id), class: "li__link__items"%>
+            <%= link_to "Удалить:  " + "#{@article.title}", article_path(@article.id) , class: "li__link__items", method: :delete %>
+        </div>
+    </div>
+
+</div>
+
+

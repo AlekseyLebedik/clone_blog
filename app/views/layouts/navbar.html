@@ -1,0 +1,65 @@
+<nav class="main__nav">
+    <!--! Логотип -->
+    <div class="logo__nav">
+
+    </div>
+    <!--! Тело навигации -->
+    <div class="body__nav">
+        <ul class="list_nav">
+            <!--! Items  навигации -->
+            <li class="item__nav"><a href="/articles" class="link_nav">
+                    MainPages
+            </a></li>
+                <li class="item__nav">
+                    <a href="#" class="link_nav">
+                        <%= form_tag article_path  , method: :post do %>
+                            <%= label_tag :title%>
+                            <%= text_field_tag :Find articles%> 
+                            <%= submit_tag "Find" , {class: 'btn btn-warning'}%>
+                        <%end%>
+                </a>
+            </li>
+            <li class="item__nav"><a href="#" class="link_nav"></a>
+            </li>
+            <li class="item__nav"><a href="#" class="link_nav"></a>
+            </li>
+            <li class="item__nav"><a href="#" class="link_nav"></a>
+            </li>
+        </ul>
+    </div>
+ 
+
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+<div class="auto_nav">
+    <%= form_tag article_path  , method: :put do %>
+        <%= label_tag :Login%>
+        <%= text_field_tag :Login %>
+        <%= label_tag :Password%>
+        <%= text_field_tag :Pasword %>
+       
+        <%= submit_tag "Saved" , {class: 'btn btn-warning'}%>
+    <%end%>
+
+</div>
+
+
+
+
+
+<header class="index__header">
+    <div class="header__body">
+        <div class="first__img"><img src="" alt=""></div>
+        <div class="second__ing"><a href="" class="img__header"><img src="" alt=""></a></div>
+    </div>
+</header>

@@ -1,0 +1,22 @@
+
+<div class = "new__post">
+    <h1 class = "title__new__post">Редактировать статью ~ <%= @article.title%></h1>
+    <%= form_tag article_path , html:{ multipart: true }, class: "form__creat" ,method: :put do %>
+        <div class = 'items__forms'>
+            <label class = "descriptions__form" for="lastname">Ваш заголовок :</label>
+            <input type="text" id="lastname" name = "title"  class= "input" value ="<%=@article.title%>" >
+        </div>
+          <div class = 'items__forms'>
+            <label class = "descriptions__form" for="author">Автор :</label>
+            <input type="text" id="author" name = "author" ,  size="50" class= "input" value ="<%=@article.author%>" >
+        </div>
+         <div class = 'items__forms'>
+            <label class = "descriptions__form" for="discription">Описание :</label>
+           <textarea class = "description__text"  placeholder ="Remember, be nice!" cols="50" rows="10" id ="description" name ="description" ><%=@article.description%></textarea>
+        </div>
+        <div class = "button__part">
+                <%= file_field_tag :avatar , name: 'avatar' , multipart: true ,  class: "button__new__post"%>
+                <%= submit_tag "Cохранить" , class: "button__new__post" %>
+        </div>
+    <% end %>
+</div>  

@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="row">
+    <div class = "popup">
+        <div class = "Login"></div>
+        <div class = "Pasword"></div>
+    </div>
+    <header class="index__header">
+        <div class="header__body">
+            <div class="first__img"><%= image_tag '1.png' , :class => "first__img" %></div>
+            <div class="second__img"> 
+             
+                    <section class="header__items">
+                        <p class="title__last__items"><%=@last.title %></p>
+                        <div class = "last__items__body">
+                            <p class = "elem__body__author">Автор: <%=@last.author %></p>
+                            <p class = "elem__body__description"> <%= truncate(strip_tags(@last.description),length:200)%></p>
+                        </div>
+                    </section>
+            </div>
+        </div>
+    </header>
+ 
+    <div class = "body__index"> 
+                    
+                <% @articl.each do |single| %>
+                    <div class="index__item">
+                        <div class = "title__item"><%= single.title %></div>
+                            <div class = "body__index__items">
+                                <div class = "body__items"><%= image_tag single.avatar.url(:thumb) if single.avatar? %></div>
+                                <div class = "body__items"> Автор : <%= single.author%></div>
+                                <div class = "description__items"> Описание : <%= truncate(strip_tags(single.description),length:200)%></div>
+                                <div class = "link__items">
+                                       <%= link_to "Редактировать:  " + "#{single.title}" , edit_article_path(single.id), class: "li__link__items"%>
+                                      <%= link_to "Перейти:  " + "#{single.title}", article_path(single.id), class: "li__link__items"%>
+                                       <%= link_to "Удалить:  " + "#{single.title}", article_path(single.id) , class: "li__link__items", method: :delete %>
+                                </div>
+                            </div>
+                    </div>
+                <% end %>
+        </div>
+    </div>
+</div>
+      
+
+      
+    
